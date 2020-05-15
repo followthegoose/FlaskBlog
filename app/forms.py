@@ -1,23 +1,23 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, ValidationError, EqualTo, Email
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, ValidationError, EqualTo, Email, Length
 from app.models import User
 
-
+"""Форма аутентификации"""
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember me')
-    submit = SubmitField('Sign In')
+    username = StringField('Имя пользователя', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    remember_me = BooleanField('Запомнить меня!')
+    submit = SubmitField('Войти')
 
-
+"""Форма регистрации"""
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Имя пользователя', validators=[DataRequired()])
+    email = StringField('Электронная почта', validators=[DataRequired(), Email()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
     password2 = PasswordField(
-        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Register')
+        'Еще раз пароль', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Зарегистрироваться')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
@@ -29,3 +29,8 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Пользователь с таким e-mail уже существует')
 
+"""Форма About"""
+class EditProfileForm(FlaskForm):
+    username = StringField('Имя пользователя', validators=[DataRequired()])
+    about_me = TextAreaField('Обо мне', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Подтвердить')
