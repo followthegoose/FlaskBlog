@@ -10,6 +10,7 @@ def load_user(id):
     return User.query.get(int(id))
 
 
+"""Таблица ассоциаций"""
 followers = db.Table('followers',
                      db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
                      db.Column('followed_id', db.Integer, db.ForeignKey('user.id')))
@@ -59,10 +60,10 @@ class User(UserMixin, db.Model):
     """Лента"""
     def followed_posts(self):
         followed = Post.query.join(
-            followers,(followers.c.followed_id == Post.user_id)).filter(
-            followers.c.followed_id == self.id)
+            followers, (followers.c.followed_id == Post.user_id)).filter(
+                followers.c.follower_id == self.id)
         own = Post.query.filter_by(user_id=self.id)
-        return followed.union(own).order_by(timestamp.desc())
+        return followed.union(own).order_by(Post.timestamp.desc())
 
 
     def __repr__(self):
