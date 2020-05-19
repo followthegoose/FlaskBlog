@@ -129,3 +129,8 @@ Traceback (most recent call last):
     return iter(itervalues(self._fields))
 AttributeError: 'EditProfileForm' object has no attribute '_fields'
 2020-05-18 14:46:53,594 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 15:35:24,158 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 15:35:37,205 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 15:37:05,567 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-19 13:11:50,779 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-19 13:12:09,140 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]

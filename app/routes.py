@@ -30,7 +30,7 @@ def index():
     return render_template('index.html', title='Active Gomez', posts=posts)
 
 
-"""АУТЕНТИФИКАЦИЯ"""
+"""Аутентификация"""
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -52,14 +52,14 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-"""ВЫХОД"""
+"""Выход"""
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 
-"""РЕГИСТРИАЦИЯ"""
+"""Регистрация"""
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -75,7 +75,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-"""СТРАНИЦА ПРОСМОТРА ПОЛЬЗОВАТЕЛЯ"""
+"""Страница пользователя"""
 @app.route('/user/<username>')
 @login_required
 def user(username):
