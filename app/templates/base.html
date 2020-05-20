@@ -10,6 +10,7 @@
     <div>
         Microblog:
         <a href="{{ url_for('index') }}">Домик</a>
+        <a href="{{ url_for('explore') }}">Лента</a>
         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Войти</a>
         {% else %}

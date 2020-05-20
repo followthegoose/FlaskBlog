@@ -48,3 +48,20 @@ class EditProfileForm(FlaskForm):
             user=User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('Пожалуйста используйте другое имя')
+
+
+"""Форма отправки поста"""
+class PostForm(FlaskForm):
+    post = TextAreaField('Что нового?', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Отправить')
+
+
+'''Форма сброса пароля'''
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('E-mail', validators=[DataRequired(), Email()])
+    submit = SubmitField('Сбросить пароль')
+
+
+
+

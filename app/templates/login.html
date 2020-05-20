@@ -24,3 +24,8 @@
 
 <p>Ты тут впервые? <a href="{{ url_for('register') }}">Жми и регистрируйся!</a></p>
 {% endblock %}
+
+<p>
+    Забыл пароль?
+    <a href="{{ url_for('reset_password_request') }}">Нажми для сброса</a>
+</p>

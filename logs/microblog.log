@@ -34,3 +34,67 @@ Traceback (most recent call last):
     {{ user.followed.cont() }} подписок
 jinja2.exceptions.UndefinedError: 'sqlalchemy.orm.dynamic.AppenderBaseQuery object' has no attribute 'cont'
 2020-05-19 15:24:15,614 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:02:32,740 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:02:34,498 ERROR: Exception on / [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\mblog\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 24, in index
+    return render_template('index.html', title='Active Gomez', form=form, posts=posts)
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\index.html", line 9, in template
+    {{ form.post(cols=32, rows=4 }} <br>
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2020-05-20 12:02:54,653 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:09:33,075 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:13:38,123 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:17:37,838 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:33:00,566 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 12:56:43,631 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 13:46:16,177 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:06:27,717 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:06:50,034 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:07:25,937 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:08:04,813 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:08:21,975 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:08:50,500 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:23:03,547 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-20 14:59:09,518 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:09:40,393 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:11:44,794 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:19:04,791 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:21:17,574 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:27:28,707 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:31:59,621 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:39:22,072 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:41:30,266 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:44:09,989 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:51:50,015 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+2020-05-20 15:54:21,225 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
