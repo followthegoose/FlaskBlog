@@ -57,11 +57,16 @@ class PostForm(FlaskForm):
     submit = SubmitField('Отправить')
 
 
-'''Форма сброса пароля'''
+'''Форма реквеста сброса пароля'''
 class ResetPasswordRequestForm(FlaskForm):
     email = StringField('E-mail', validators=[DataRequired(), Email()])
     submit = SubmitField('Сбросить пароль')
 
 
-
+'''Форма сброса пароля'''
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    password2 = PasswordField('Повторите пароль',
+                              validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Сбросить пароль')
 

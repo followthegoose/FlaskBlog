@@ -1,0 +1,119 @@
+2020-05-18 13:17:53,670 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 13:18:03,363 ERROR: Exception on /edit_profile [POST] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\mblog\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 107, in edit_profile
+    db.session.commit()
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 2496, in flush
+    self._flush(objects)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 2637, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\session.py", line 2597, in _flush
+    flush_context.execute()
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\persistence.py", line 230, in save_obj
+    _emit_update_statements(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\orm\persistence.py", line 994, in _emit_update_statements
+    c = cached_connections[connection].execute(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 1287, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 1481, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\user\mblog\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('lera', 'Я классный! ', 2)]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-05-18 14:42:23,414 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 14:43:09,562 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+2020-05-18 14:43:22,995 ERROR: Exception on /edit_profile [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\mblog\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 115, in edit_profile
+    return render_template('edit_profile.html', title='Edit Profile',
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 6, in block "content"
+    {{ form.hidden_tag() }}
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
+    for f in fields:
+  File "c:\users\user\mblog\lib\site-packages\wtforms\form.py", line 56, in __iter__
+    return iter(itervalues(self._fields))
+AttributeError: 'EditProfileForm' object has no attribute '_fields'
