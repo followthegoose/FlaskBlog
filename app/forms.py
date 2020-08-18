@@ -70,3 +70,5 @@ class ResetPasswordForm(FlaskForm):
                               validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Сбросить пароль')
 
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Ок')

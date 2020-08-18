@@ -1,4 +1,4 @@
-2020-05-18 14:43:25,281 ERROR: Exception on /edit_profile [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+2020-05-21 16:49:34,243 ERROR: Exception on / [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 115, in edit_profile
-    return render_template('edit_profile.html', title='Edit Profile',
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 30, in index
+    return render_template('index.html', title='Active Gomez',
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,23 +26,25 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 1, in top-level template code
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
-    for f in fields:
-  File "c:\users\user\mblog\lib\site-packages\wtforms\form.py", line 56, in __iter__
-    return iter(itervalues(self._fields))
-AttributeError: 'EditProfileForm' object has no attribute '_fields'
-2020-05-18 14:44:24,507 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-18 14:44:26,567 ERROR: Exception on /edit_profile [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/base.html
+2020-05-21 16:54:12,868 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 13:59:24,262 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:00:18,465 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:00:48,067 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:04:00,546 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:05:43,267 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:07:58,747 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:11:33,718 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:15:23,669 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:19:29,088 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,8 +60,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 115, in edit_profile
-    return render_template('edit_profile.html', title='Edit Profile',
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 108, in user
+    return render_template('user.html', user=user, posts=posts.items,
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
@@ -70,22 +72,27 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 1, in top-level template code
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 6, in block "content"
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 17, in block "app_content"
     {{ form.hidden_tag() }}
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
-    for f in fields:
-  File "c:\users\user\mblog\lib\site-packages\wtforms\form.py", line 56, in __iter__
-    return iter(itervalues(self._fields))
-AttributeError: 'EditProfileForm' object has no attribute '_fields'
-2020-05-18 14:46:08,308 ERROR: Exception on /edit_profile [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2020-05-22 14:22:00,577 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:22:03,012 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -101,8 +108,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 115, in edit_profile
-    return render_template('edit_profile.html', title='Edit Profile',
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 108, in user
+    return render_template('user.html', user=user, posts=posts.items,
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
@@ -113,25 +120,22 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 1, in top-level template code
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\User\PycharmProjects\mblog\app\templates\edit_profile.html", line 6, in block "content"
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 17, in block "app_content"
     {{ form.hidden_tag() }}
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
-    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
-  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
-    for f in fields:
-  File "c:\users\user\mblog\lib\site-packages\wtforms\form.py", line 56, in __iter__
-    return iter(itervalues(self._fields))
-AttributeError: 'EditProfileForm' object has no attribute '_fields'
-2020-05-18 14:46:53,594 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-18 15:35:24,158 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-18 15:35:37,205 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-18 15:37:05,567 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-19 13:11:50,779 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-19 13:12:09,140 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
-2020-05-19 15:23:47,722 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:48]
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

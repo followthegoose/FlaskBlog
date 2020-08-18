@@ -1,4 +1,4 @@
-2020-05-21 14:58:37,090 ERROR: Exception on /reset_password_request [POST] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+2020-05-22 14:22:05,093 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,47 +12,42 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 185, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\User\PycharmProjects\mblog\app\email.py", line 19, in send_password_reset_email
-    text_body=render_template('email/reset_password.txt',
-  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\users\user\mblog\lib\site-packages\jinja2\loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: email/reset_password.txt
-2020-05-21 15:01:47,195 ERROR: Exception on /reset_password_request [POST] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 427, in send
-    connection.send(self)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 188, in send
-    self.host.sendmail(sanitize_address(envelope_from or message.sender),
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 856, in sendmail
-    self.ehlo_or_helo_if_needed()
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 604, in ehlo_or_helo_if_needed
-    if not (200 <= self.ehlo()[0] <= 299):
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 444, in ehlo
-    self.putcmd(self.ehlo_msg, name or self.local_hostname)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-
-During handling of the above exception, another exception occurred:
-
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 108, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 17, in block "app_content"
+    {{ form.hidden_tag() }}
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2020-05-22 14:25:15,472 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:30:24,818 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:30:31,581 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,48 +61,39 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 185, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\User\PycharmProjects\mblog\app\email.py", line 16, in send_password_reset_email
-    send_email('MBlog',
-  File "C:\Users\User\PycharmProjects\mblog\app\email.py", line 11, in send_email
-    mail.send(msg)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 152, in __exit__
-    self.host.quit()
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 988, in quit
-    res = self.docmd("quit")
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 424, in docmd
-    self.putcmd(cmd, args)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-2020-05-21 15:01:51,173 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
-2020-05-21 15:02:11,142 ERROR: Exception on /reset_password_request [POST] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 427, in send
-    connection.send(self)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 188, in send
-    self.host.sendmail(sanitize_address(envelope_from or message.sender),
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 856, in sendmail
-    self.ehlo_or_helo_if_needed()
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 604, in ehlo_or_helo_if_needed
-    if not (200 <= self.ehlo()[0] <= 299):
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 444, in ehlo
-    self.putcmd(self.ehlo_msg, name or self.local_hostname)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-
-During handling of the above exception, another exception occurred:
-
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 111, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 24, in block "app_content"
+    {{ form.hidden_tag() }}
+TypeError: hidden_tag() missing 1 required positional argument: 'self'
+2020-05-22 14:31:13,946 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:31:15,356 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -121,23 +107,42 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 185, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\User\PycharmProjects\mblog\app\email.py", line 16, in send_password_reset_email
-    send_email('MBlog',
-  File "C:\Users\User\PycharmProjects\mblog\app\email.py", line 11, in send_email
-    mail.send(msg)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\users\user\mblog\lib\site-packages\flask_mail.py", line 152, in __exit__
-    self.host.quit()
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 988, in quit
-    res = self.docmd("quit")
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 424, in docmd
-    self.putcmd(cmd, args)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "C:\Users\User\AppData\Local\Programs\Python\Python38-32\lib\smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-2020-05-21 15:04:11,574 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 111, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 24, in block "app_content"
+    {{ form.hidden_tag(self) }}
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "c:\users\user\mblog\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
+    for f in fields:
+  File "c:\users\user\mblog\lib\site-packages\jinja2\runtime.py", line 112, in __getitem__
+    blocks = self.__context.blocks[name]
+KeyError: 0

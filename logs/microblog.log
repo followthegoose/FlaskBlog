@@ -1,4 +1,5 @@
-2020-05-21 15:05:54,858 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NCwiZXhwIjoxNTkwMDU5Njg0LjYxNTUzMTR9.Bm5CMMI81Y9Uzutf8MAo_ySV-T0vZlE2GekFqZ4eob4 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+2020-05-22 14:31:45,855 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-05-22 14:31:47,176 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +13,92 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 197, in reset_password
-    user = User.verify_reset_password_token(token)
-  File "C:\Users\User\PycharmProjects\mblog\app\models.py", line 87, in verify_reset_password_token
-    return User.quety.get(id)
-AttributeError: type object 'User' has no attribute 'quety'
-2020-05-21 15:06:54,149 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
-2020-05-21 15:56:32,152 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:53]
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 111, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 25, in block "app_content"
+    {{ form.submit(value='Unfollow', class_='btn btn-default') }}
+TypeError: 'UnboundField' object is not callable
+2020-05-22 14:33:11,572 ERROR: Exception on /user/googoosik88 [GET] [in c:\users\user\mblog\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\mblog\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\mblog\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\user\mblog\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\mblog\app\routes.py", line 111, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\user\mblog\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\mblog\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\mblog\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\mblog\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\base.html", line 50, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\User\PycharmProjects\mblog\app\templates\user.html", line 25, in block "app_content"
+    {{ user.followed.count() }} подписок
+TypeError: 'UnboundField' object is not callable
+2020-05-22 14:33:15,233 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-06-17 15:58:13,387 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-07-30 16:35:45,660 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-07-30 16:36:00,505 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-08-04 12:57:39,397 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-08-04 12:57:57,075 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-08-04 12:58:08,714 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:55]
+2020-08-18 12:31:25,894 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
+2020-08-18 12:36:29,259 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
+2020-08-18 12:36:38,212 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
+2020-08-18 12:52:52,562 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
+2020-08-18 12:53:03,473 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
+2020-08-18 13:10:49,011 INFO: Flaskblog startup [in C:\Users\User\PycharmProjects\mblog\app\__init__.py:57]
